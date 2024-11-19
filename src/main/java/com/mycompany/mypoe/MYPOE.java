@@ -18,7 +18,7 @@ public class MYPOE {
     
     public static void main(String[] args) {
         
-        // Create an instance of the Login class for user authentication
+        // Create an instance of the Login class for user authentication.
         Login loginSystem = new Login();
         
         // Variable declarations for user details.
