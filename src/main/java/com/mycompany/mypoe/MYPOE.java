@@ -30,7 +30,7 @@ public class MYPOE {
         String loginPassword;
         boolean LoggedIn = false;
 
-        // Prompt user for their first and last name
+        // Prompt user for their first and last name.
         name = JOptionPane.showInputDialog("Enter First Name: ");
         surname = JOptionPane.showInputDialog("Enter Last Name: ");
 
