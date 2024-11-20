@@ -16,6 +16,14 @@ public class MYPOE {
     private static ArrayList<Task> tasks = new ArrayList<>();
     private static int totalTaskDuration = 0;
     
+    // Arrays to store task details
+    private static String[] developer = new String[4];
+    private static String[] taskNames = new String [4];
+    private static String[] taskIDs = new String[4];
+    private static int[] durations = new int[4];
+    private static String[] taskStatuses = new String[4];
+     private static int taskCount = 0;
+    
     public static void main(String[] args) {
         
         // Create an instance of the Login class for user authentication.
@@ -59,6 +67,7 @@ public class MYPOE {
 
         // If the user is logged in, display the EasyKanban menu
         if (LoggedIn) {
+            
             JOptionPane.showMessageDialog(null, "Welcome to EasyKanban");
 
             boolean running = true;
@@ -67,8 +76,13 @@ public class MYPOE {
                 String menu = JOptionPane.showInputDialog(
                     "Please select an option:\n" +
                     "1) Add Tasks\n" +
-                    "2) Show Report (Coming Soon)\n" +
-                    "3) Quit");
+                    "2) Display Report\n" +
+                    "3) Display 'Done' Tasks\n" +
+                    "4) Display Longest Task\n" +
+                    "5) Search Task\n" +
+                    "6) Search Developer\n" +
+                    "7) Delete Task" +
+                    "8) Quit");
                 
                 // Parse the user's menu selection
                 int option = Integer.parseInt(menu);
@@ -80,10 +94,32 @@ public class MYPOE {
                         addTasks();
                         break;
                     case 2:
-                        // Display a placeholder for the report feature
-                        JOptionPane.showMessageDialog(null, "Coming Soon");
+                        // Display a report that lists full details of all captured tasks.
+                        
                         break;
                     case 3:
+                        // Display the developer, task Names and Task duration of all tasks with the status of "Done"
+                        for (int i = 0; i < taskCount;i++ ){
+                            displayDoneTasks();
+                        }
+                        break;
+                    case 4:
+                        // Display the developer and duration of the task with the longest duration
+                        
+                        break;
+                    case 5:
+                        // Search for a task with a task name and display the task name, developer and task status
+                        
+                        break;
+                    case 6:
+                        // Search for all tasks assigned to a developer and display the task name and task status
+                        
+                        break;
+                    case 7:
+                        // Delete a task using task name 
+                        
+                        break;                                   
+                    case 8:
                         // Exit the application
                         running = false;
                         break;
@@ -133,16 +169,30 @@ public class MYPOE {
             String taskStatus = (String) JOptionPane.showInputDialog(null, "Select Task Status",
                     "Task Status", JOptionPane.QUESTION_MESSAGE, null, statusOptions, statusOptions[0]);
 
+            
+            
             // Create a new Task object and add it to the list
             Task task = new Task(taskName, i, description, developerDetails, duration, taskStatus);
             taskList.add(task);
             totalHrs += duration;
 
+            developer[taskCount] = developerDetails;
+            taskNames[taskCount] = taskName;
+            durations[taskCount] = duration;
+            taskStatuses[taskCount] = taskStatus;
+            taskIDs[taskCount] = task.createTaskID();
+            
+            taskCount++;
+            
             // Display task details
-            JOptionPane.showMessageDialog(null, task.printTaskDetails());
+            JOptionPane.showMessageDialog(null, task.printTaskDetails());      
         }
-
         // Display the total hours for all tasks
         JOptionPane.showMessageDialog(null, "Total task hours: " + totalHrs);
+    }
+    public void displayDoneTasks(){
+        for (int i =0; i <taskCount; i++){
+            
+        }
     }
 }
