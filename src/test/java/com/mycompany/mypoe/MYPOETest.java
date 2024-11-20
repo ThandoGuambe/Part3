@@ -19,11 +19,17 @@ class MYPOETest {
     private static String[] taskNames;
     private static int[] durations;
     private static String[] taskStatuses;
-    private static int[] taskCount;
+    private static int taskCount;
     
     @BeforeEach
     public void setUp() {
+        // Declare and initialize arrays and mock data
         taskIDs = new String[5];
+        developer = new String[5];
+        taskNames = new String[5];
+        durations = new int[5];
+        taskStatuses = new String[5];
+        taskCount = 5;
     }
     
   
