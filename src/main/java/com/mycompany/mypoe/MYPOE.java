@@ -231,6 +231,21 @@ public class MYPOE {
             }
         }
     }
-    }
+    //A method that allows the user to search for a task by name    
+    private static void searchTaskName(){
+        String taskName = JOptionPane.showInputDialog("Enter Task Name to Search:");
+        
+        for (int i = 0; i <taskCount; i++){
+            if (taskName.equalsIgnoreCase(taskNames[i])){
+                JOptionPane.showMessageDialog(null, String.format("Task Found:\n Task Name: %s\n Developer:%s\n Status: %s)",
+                        taskNames[i],developer[i], taskStatuses[i]));
+            }else{
+                // Notify the user if the task is not found
+                JOptionPane.showMessageDialog(null, "Task not found.");
+            }
+        }
+        
+    }  
+}
     
 
