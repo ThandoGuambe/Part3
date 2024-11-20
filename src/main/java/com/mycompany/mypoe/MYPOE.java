@@ -206,7 +206,7 @@ public class MYPOE {
         StringBuilder result = new StringBuilder("Completed tasks:\n");
         for (int i =0; i <taskCount; i++){
             if ("Done".equalsIgnoreCase(taskStatuses[i])){
-                result.append(String.format("Developer: %s\nTask: %s\nDuration: %d hours)",
+                result.append(String.format("Developer: %s\nTask: %s\nDuration: %d hours",
                         developer[i], taskNames[i], durations[i]));
                 
                 JOptionPane.showMessageDialog(null, result.toString());
@@ -226,12 +226,11 @@ public class MYPOE {
             if (durations[i] > durations[maxtime]) {
                 // Update index if a longer task is found
                 maxtime = i;
-                // Display details of the longest task
-                JOptionPane.showMessageDialog(null, String.format("Longest task:\nDeveloper: %s\nDuration:%d hours)",
-                        developer[maxtime], durations[maxtime]));
-                return;
             }
         }
+        // Display details of the longest task
+            JOptionPane.showMessageDialog(null, String.format("Longest task:\nDeveloper: %s\nDuration:%d hours",
+            developer[maxtime], durations[maxtime]));          
     }
     //A method that allows the user to search for a task by name    
     private static void searchTaskName(){
@@ -239,7 +238,7 @@ public class MYPOE {
         
         for (int i = 0; i <taskCount; i++){
             if (taskName.equalsIgnoreCase(taskNames[i])){
-                JOptionPane.showMessageDialog(null, String.format("Task Found:\n Task Name: %s\n Developer:%s\n Status: %s)",
+                JOptionPane.showMessageDialog(null, String.format("Task Found:\n Task Name: %s\n Developer:%s\n Status: %s",
                         taskNames[i],developer[i], taskStatuses[i]));
                 return;
             }
@@ -253,7 +252,7 @@ public class MYPOE {
         
         for (int i = 0; i <taskCount; i++){
             if (Dev.equalsIgnoreCase(developer[i])){
-                JOptionPane.showMessageDialog(null, String.format("Task assigned to" + developer[i] + ":\n Task Name: %s\n Status: %s)",
+                JOptionPane.showMessageDialog(null, String.format("Task assigned to " + developer[i] + ":\n Task Name: %s\n Status: %s",
                         taskNames[i], taskStatuses[i]));
                 return;
             }
