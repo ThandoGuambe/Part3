@@ -243,9 +243,22 @@ public class MYPOE {
                 // Notify the user if the task is not found
                 JOptionPane.showMessageDialog(null, "Task not found.");
             }
-        }
+        }    
+    }
+    //Method that allows the user to search for tasks assigned to a specific developer
+        private static void searchDeveloper(){
+        String Dev = JOptionPane.showInputDialog("Enter Developer's Name and Surname:");
         
-    }  
+        for (int i = 0; i <taskCount; i++){
+            if (Dev.equalsIgnoreCase(developer[i])){
+                JOptionPane.showMessageDialog(null, String.format("Task assigned to" + developer[i] + ":\n Task Name: %s\n Status: %s)",
+                        taskNames[i], taskStatuses[i]));
+            }else{
+                //Notify the user if no tasks are found for the develope
+                JOptionPane.showMessageDialog(null, "Nothing found.");
+            }
+    }
+    }
 }
     
 
