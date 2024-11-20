@@ -17,11 +17,11 @@ public class MYPOE {
     private static int totalTaskDuration = 0;
     
     // Arrays to store task details
-    private static String[] developer = new String[4];
-    private static String[] taskNames = new String [4];
-    private static String[] taskIDs = new String[4];
-    private static int[] durations = new int[4];
-    private static String[] taskStatuses = new String[4];
+    private static String[] developer = new String[5];
+    private static String[] taskNames = new String [5];
+    private static String[] taskIDs = new String[5];
+    private static int[] durations = new int[5];
+    private static String[] taskStatuses = new String[5];
      private static int taskCount = 0;
     
     public static void main(String[] args) {
@@ -196,7 +196,6 @@ public class MYPOE {
           for (int i = 0; i < taskCount; i++) {
             report.append(String.format("Task ID: %s, Developer: %s, Task: %s, Duration: %d hours, Status: %s\n",
                     taskIDs[i], developer[i], taskNames[i], durations[i], taskStatuses[i]));
-            return;
         }
          // Display the compiled report
         JOptionPane.showMessageDialog(null, report.toString());
@@ -229,7 +228,7 @@ public class MYPOE {
             }
         }
         // Display details of the longest task
-            JOptionPane.showMessageDialog(null, String.format("Longest task:\nDeveloper: %s\nDuration:%d hours",
+            JOptionPane.showMessageDialog(null, String.format("Longest task:\nDeveloper: %s\nDuration: %d hours",
             developer[maxtime], durations[maxtime]));          
     }
     //A method that allows the user to search for a task by name    
@@ -238,7 +237,7 @@ public class MYPOE {
         
         for (int i = 0; i <taskCount; i++){
             if (taskName.equalsIgnoreCase(taskNames[i])){
-                JOptionPane.showMessageDialog(null, String.format("Task Found:\n Task Name: %s\n Developer:%s\n Status: %s",
+                JOptionPane.showMessageDialog(null, String.format("Task Found:\n Task Name: %s\n Developer: %s\n Status: %s",
                         taskNames[i],developer[i], taskStatuses[i]));
                 return;
             }
