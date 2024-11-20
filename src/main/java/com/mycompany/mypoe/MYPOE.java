@@ -190,7 +190,7 @@ public class MYPOE {
         // Display the total hours for all tasks
         JOptionPane.showMessageDialog(null, "Total task hours: " + totalHrs);
     }
-    // Method that creates a report summarizing all tasks and displays it in a dialog box
+    // Method that creates a report summarizing all tasks and displays it
     private static void report(){
         StringBuilder report = new StringBuilder("All Tasks:\n");
         
@@ -199,9 +199,23 @@ public class MYPOE {
             report.append(String.format("Task ID: %s, Developer: %s, Task: %s, Duration: %d hours, Status: %s\n",
                     taskIDs[i], developer[i], taskNames[i], durations[i], taskStatuses[i]));
         }
+         // Display the compiled report
         JOptionPane.showMessageDialog(null, report.toString());
     }
-    
+    // A method that displays all tasks that have been marked as "Done"
+    private static void displayDoneTasks(){
+        StringBuilder result = new StringBuilder("Completed tasks:\n");
+        for (int i =0; i <taskCount; i++){
+            if ("Done".equalsIgnoreCase(taskStatuses[i])){
+                result.append(String.format("Developer: %s\n, Task: %s\n, Duration: %d hours\n)",
+                        developer[i], taskNames[i], durations[i]));
+                
+                JOptionPane.showMessageDialog(null, result.toString());
+            }else{
+                JOptionPane.showMessageDialog(null, "No task has been completed.");
+            }   
+        }  
+    }
     
     }
     
