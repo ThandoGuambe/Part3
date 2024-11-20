@@ -216,7 +216,21 @@ public class MYPOE {
             }   
         }  
     }
-    
+    // A method that identifies and displays the task with the longest duration
+        private static void showLongestTask(){
+        
+        //decalred the index of the longest task
+        int maxtime = 0;
+        for (int i = 1; i < taskCount; i++) {
+            if (durations[i] > durations[maxtime]) {
+                // Update index if a longer task is found
+                maxtime = i;
+                // Display details of the longest task
+                JOptionPane.showMessageDialog(null, String.format("Longest tasks:\n Developer:%s\n Duration:&d hours\n)",
+                        developer[maxtime], durations[maxtime]));
+            }
+        }
+    }
     }
     
 
