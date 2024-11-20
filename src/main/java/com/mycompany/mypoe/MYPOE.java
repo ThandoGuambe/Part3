@@ -277,11 +277,11 @@ public class MYPOE {
                 // Decrease the total task count
                 taskCount--;
                 JOptionPane.showMessageDialog(null, "Task deleted successfully.");
-            }else{
-                // Notify the user if the task is not found
-                JOptionPane.showMessageDialog(null, "Task not found.");
+                return;
             }
         }
+        // Notify the user if the task is not found
+        JOptionPane.showMessageDialog(null, "Task not found.");
     }
 }
     
