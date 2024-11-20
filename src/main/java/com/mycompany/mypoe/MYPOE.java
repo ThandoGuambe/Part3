@@ -99,9 +99,7 @@ public class MYPOE {
                         break;
                     case 3:
                         // Display the developer, task Names and Task duration of all tasks with the status of "Done"
-                        for (int i = 0; i < taskCount;i++ ){
-                            displayDoneTasks();
-                        }
+                            displayDoneTasks();    
                         break;
                     case 4:
                         // Display the developer and duration of the task with the longest duration
@@ -207,7 +205,7 @@ public class MYPOE {
         StringBuilder result = new StringBuilder("Completed tasks:\n");
         for (int i =0; i <taskCount; i++){
             if ("Done".equalsIgnoreCase(taskStatuses[i])){
-                result.append(String.format("Developer: %s\n, Task: %s\n, Duration: %d hours\n)",
+                result.append(String.format("Developer: %s\nTask: %s\nDuration: %d hours)",
                         developer[i], taskNames[i], durations[i]));
                 
                 JOptionPane.showMessageDialog(null, result.toString());
@@ -218,7 +216,10 @@ public class MYPOE {
     }
     // A method that identifies and displays the task with the longest duration
         private static void showLongestTask(){
-        
+        if (taskCount == 0) {
+            JOptionPane.showMessageDialog(null, "No tasks available.");
+            return;
+        }
         //decalred the index of the longest task
         int maxtime = 0;
         for (int i = 1; i < taskCount; i++) {
@@ -226,7 +227,7 @@ public class MYPOE {
                 // Update index if a longer task is found
                 maxtime = i;
                 // Display details of the longest task
-                JOptionPane.showMessageDialog(null, String.format("Longest tasks:\n Developer:%s\n Duration:&d hours\n)",
+                JOptionPane.showMessageDialog(null, String.format("Longest task:\nDeveloper: %s\nDuration:%d hours)",
                         developer[maxtime], durations[maxtime]));
             }
         }
@@ -259,7 +260,7 @@ public class MYPOE {
             }
     }
     }
-    //Methid that allows the user to delete a task by name
+    //Method that allows the user to delete a task by name
           private static void deleteTask(){
         String taskName = JOptionPane.showInputDialog("Enter Task Name to Delete:");
         
