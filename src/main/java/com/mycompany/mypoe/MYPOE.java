@@ -209,9 +209,8 @@ public class MYPOE {
                         developer[i], taskNames[i], durations[i]));
                 
                 JOptionPane.showMessageDialog(null, result.toString());
-            }else{
-                JOptionPane.showMessageDialog(null, "No task has been completed.");
-            }   
+                return;
+            }  
         }  
     }
     // A method that identifies and displays the task with the longest duration
@@ -229,6 +228,7 @@ public class MYPOE {
                 // Display details of the longest task
                 JOptionPane.showMessageDialog(null, String.format("Longest task:\nDeveloper: %s\nDuration:%d hours)",
                         developer[maxtime], durations[maxtime]));
+                return;
             }
         }
     }
@@ -240,11 +240,11 @@ public class MYPOE {
             if (taskName.equalsIgnoreCase(taskNames[i])){
                 JOptionPane.showMessageDialog(null, String.format("Task Found:\n Task Name: %s\n Developer:%s\n Status: %s)",
                         taskNames[i],developer[i], taskStatuses[i]));
-            }else{
-                // Notify the user if the task is not found
-                JOptionPane.showMessageDialog(null, "Task not found.");
+                return;
             }
-        }    
+        }   
+        // Notify the user if the task is not found
+        JOptionPane.showMessageDialog(null, "Task not found.");
     }
     //Method that allows the user to search for tasks assigned to a specific developer
         private static void searchDeveloper(){
@@ -254,11 +254,11 @@ public class MYPOE {
             if (Dev.equalsIgnoreCase(developer[i])){
                 JOptionPane.showMessageDialog(null, String.format("Task assigned to" + developer[i] + ":\n Task Name: %s\n Status: %s)",
                         taskNames[i], taskStatuses[i]));
-            }else{
-                //Notify the user if no tasks are found for the develope
-                JOptionPane.showMessageDialog(null, "Nothing found.");
+                return;
             }
     }
+        //Notify the user if no tasks are found for the develope
+        JOptionPane.showMessageDialog(null, "Nothing found.");
     }
     //Method that allows the user to delete a task by name
           private static void deleteTask(){
