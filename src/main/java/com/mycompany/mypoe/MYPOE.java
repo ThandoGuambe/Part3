@@ -259,6 +259,29 @@ public class MYPOE {
             }
     }
     }
+    //Methid that allows the user to delete a task by name
+          private static void deleteTask(){
+        String taskName = JOptionPane.showInputDialog("Enter Task Name to Delete:");
+        
+        for (int i = 0; i < taskCount; i++) {
+            if (taskName.equalsIgnoreCase(taskNames[i])) {
+                // Shift all tasks one position left to remove the task
+                for (int j = i; j < taskCount - 1; j++) {
+                    developer[j] = developer[j + 1];
+                    taskNames[j] = taskNames[j + 1];
+                    taskIDs[j] = taskIDs[j + 1];
+                    durations[j] = durations[j + 1];
+                    taskStatuses[j] = taskStatuses[j + 1];
+                }
+                // Decrease the total task count
+                taskCount--;
+                JOptionPane.showMessageDialog(null, "Task deleted successfully.");
+            }else{
+                // Notify the user if the task is not found
+                JOptionPane.showMessageDialog(null, "Task not found.");
+            }
+        }
+    }
 }
     
 
