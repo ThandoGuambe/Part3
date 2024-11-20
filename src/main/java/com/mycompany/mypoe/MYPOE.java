@@ -196,6 +196,7 @@ public class MYPOE {
           for (int i = 0; i < taskCount; i++) {
             report.append(String.format("Task ID: %s, Developer: %s, Task: %s, Duration: %d hours, Status: %s\n",
                     taskIDs[i], developer[i], taskNames[i], durations[i], taskStatuses[i]));
+            return;
         }
          // Display the compiled report
         JOptionPane.showMessageDialog(null, report.toString());
