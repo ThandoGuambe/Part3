@@ -95,7 +95,7 @@ public class MYPOE {
                         break;
                     case 2:
                         // Display a report that lists full details of all captured tasks.
-                        
+                        report();
                         break;
                     case 3:
                         // Display the developer, task Names and Task duration of all tasks with the status of "Done"
@@ -105,19 +105,19 @@ public class MYPOE {
                         break;
                     case 4:
                         // Display the developer and duration of the task with the longest duration
-                        
+                        showLongestTask();
                         break;
                     case 5:
                         // Search for a task with a task name and display the task name, developer and task status
-                        
+                        searchTaskName();
                         break;
                     case 6:
                         // Search for all tasks assigned to a developer and display the task name and task status
-                        
+                         searchDeveloper();
                         break;
                     case 7:
                         // Delete a task using task name 
-                        
+                        deleteTask();
                         break;                                   
                     case 8:
                         // Exit the application
@@ -172,7 +172,7 @@ public class MYPOE {
             
             
             // Create a new Task object and add it to the list
-            Task task = new Task(taskName, i, description, developerDetails, duration, taskStatus);
+            Task task = new Task(taskName, i+1, description, developerDetails, duration, taskStatus);
             taskList.add(task);
             totalHrs += duration;
 
@@ -190,9 +190,19 @@ public class MYPOE {
         // Display the total hours for all tasks
         JOptionPane.showMessageDialog(null, "Total task hours: " + totalHrs);
     }
-    public void displayDoneTasks(){
-        for (int i =0; i <taskCount; i++){
-            
+    // Method that creates a report summarizing all tasks and displays it in a dialog box
+    private static void report(){
+        StringBuilder report = new StringBuilder("All Tasks:\n");
+        
+        // Iterate through all tasks and append their details to the report
+          for (int i = 0; i < taskCount; i++) {
+            report.append(String.format("Task ID: %s, Developer: %s, Task: %s, Duration: %d hours, Status: %s\n",
+                    taskIDs[i], developer[i], taskNames[i], durations[i], taskStatuses[i]));
         }
+        JOptionPane.showMessageDialog(null, report.toString());
     }
-}
+    
+    
+    }
+    
+
