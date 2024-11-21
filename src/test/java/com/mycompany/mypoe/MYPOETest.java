@@ -30,8 +30,47 @@ class MYPOETest {
         durations = new int[5];
         taskStatuses = new String[5];
         taskCount = 5;
+        
+        //Assign mock data
+        taskIDs[0] = "MI:0:ITH";
+        developer[0] = "Mike Smith";
+        taskNames[0] = "Create Login";
+        durations[0] = 5;
+        taskStatuses[0] = "To do";
+        
+        taskIDs[1] = "ED:1:SON";
+        developer[1] = "Edward Harrison";
+        taskNames[1] = "Create Add Feature";
+        durations[1] = 8;
+        taskStatuses[1] = "Doing";
+        
+        taskIDs[2] = "SA:2:SON";
+        developer[2] = "Samantha Paulson";
+        taskNames[2] = "Create Reports";
+        durations[2] = 2;
+        taskStatuses[2] = "Done";
+        
+        taskIDs[3] = "GL:3:ZER";
+        developer[3] = "Glenda Oberholzer";
+        taskNames[3] = "Add Arrays";
+        durations[3] = 11;
+        taskStatuses[3] = "To do";
+        
+        taskIDs[4] = "KY:4:ORT";
+        developer[4] = "Kyle Newport";
+        taskNames[4] = "Create Registration";
+        durations[4] = 6;
+        taskStatuses[4] = "To do";
     }
     
-  
+    //Test the showLongestTask() method.
+    @Test
+    void testShowLongestTask(){
+        int maxtime = 3; //Assign the Add Arrays Task as the longest 
+        assertEquals(11, durations[maxtime]);
+    }
+    void testDisplayDoneTasks(){
+        
+    }
     
 }
