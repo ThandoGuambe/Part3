@@ -69,8 +69,18 @@ class MYPOETest {
         int maxtime = 3; //Assign the Add Arrays Task as the longest 
         assertEquals(11, durations[maxtime]);
     }
+    //Test the displayDoneTasks() method.
+    @Test
     void testDisplayDoneTasks(){
-        
+        StringBuilder result = new StringBuilder("Completed tasks:\n");
+        for (int i = 0; i < taskCount; i++) {
+            if ("Done".equalsIgnoreCase(taskStatuses[i])) {
+                result.append(String.format("Developer: %s\nTask: %s\nDuration: %d hours",
+                        developer[i], taskNames[i], durations[i]));
+                break;
+            }
+        }
+        assertTrue(result.toString().contains("Create Reports"));
     }
     
 }
