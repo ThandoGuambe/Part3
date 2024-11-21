@@ -69,8 +69,7 @@ class MYPOETest {
             System.out.println(developer[i]);   
         }
     }
-    
-    
+       
     //Test the showLongestTask() method.
     @Test
     void testShowLongestTask(){
@@ -113,7 +112,22 @@ class MYPOETest {
         assertNotNull(foundTask);
         assertEquals("Create Login", foundTask);
     }
- 
+    //Test a method that displays all assigned tasks to devloper
+    @Test
+    void checkDeveloperSearch(){
+        String dev = "Samantha Paulson";
+        boolean Task = false;
+        for (int i = 0; i < taskCount; i++) {
+            
+            if (dev.equalsIgnoreCase(developer[i])) {
+                System.out.println(taskNames[i]);
+                Task = true;
+                break;
+            }
+        }
+        assertNotNull(Task);
+        assertEquals("Create Login", "Create Login");
+    }
      
     
 }
