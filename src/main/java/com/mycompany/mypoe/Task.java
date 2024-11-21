@@ -18,7 +18,7 @@ public class Task {
     private String taskStatus;       // Current status of the task (e.g., "To Do", "In Progress", "Done").
     private String taskID;           // Unique ID for the task, generated automatically.
     
-    public Task(String taskName, int i, String description, String developerDetails, int duration, String taskStatus) {
+    public Task(String taskName, int namTasks , String description, String developerDetails, int duration, String taskStatus) {
       this.taskName = taskName;
         this.taskNum = taskNum;
         this.description = description;

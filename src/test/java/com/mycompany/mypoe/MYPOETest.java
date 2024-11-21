@@ -66,8 +66,10 @@ class MYPOETest {
     @Test
     void testDeveloperArray(){
         for (int i = 0; i < taskCount; i++){
-            System.out.println(developer[i]);   
+            System.out.println(developer[i]); 
+
         }
+        
     }
        
     //Test the showLongestTask() method.
@@ -87,7 +89,7 @@ class MYPOETest {
     @Test
     void testDisplayDoneTasks(){
         StringBuilder result = new StringBuilder("Completed tasks:\n");
-        ;
+        
         for (int i = 0; i < taskCount; i++) {
             if ("Done".equalsIgnoreCase(taskStatuses[i])) {
                 result.append(String.format("Developer: %s\nTask: %s\nDuration: %d hours",
@@ -145,5 +147,7 @@ class MYPOETest {
         }
         assertEquals(initialCount - 1, taskCount);
     }
+    //Unit test the report() method using Test Data 1
+
     
 }

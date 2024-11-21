@@ -81,7 +81,7 @@ public class MYPOE {
                     "4) Display Longest Task\n" +
                     "5) Search Task\n" +
                     "6) Search Developer\n" +
-                    "7) Delete Task" +
+                    "7) Delete Task\n" +
                     "8) Quit");
                 
                 // Parse the user's menu selection
@@ -166,11 +166,9 @@ public class MYPOE {
             String[] statusOptions = {"To Do", "Done", "Doing"};
             String taskStatus = (String) JOptionPane.showInputDialog(null, "Select Task Status",
                     "Task Status", JOptionPane.QUESTION_MESSAGE, null, statusOptions, statusOptions[0]);
-
-            
             
             // Create a new Task object and add it to the list
-            Task task = new Task(taskName, i+1, description, developerDetails, duration, taskStatus);
+            Task task = new Task(taskName, i + 1 , description, developerDetails, duration, taskStatus);
             taskList.add(task);
             totalHrs += duration;
 
