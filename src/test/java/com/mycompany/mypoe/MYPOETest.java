@@ -73,6 +73,7 @@ class MYPOETest {
     @Test
     void testDisplayDoneTasks(){
         StringBuilder result = new StringBuilder("Completed tasks:\n");
+        ;
         for (int i = 0; i < taskCount; i++) {
             if ("Done".equalsIgnoreCase(taskStatuses[i])) {
                 result.append(String.format("Developer: %s\nTask: %s\nDuration: %d hours",
@@ -88,6 +89,7 @@ class MYPOETest {
         String taskName = "Create Login";
         String foundTask = null;
         for (int i = 0; i < taskCount; i++) {
+            System.out.println(developer[i] + " " + taskNames[i]);
             if (taskName.equalsIgnoreCase(taskNames[i])) {
                 foundTask = taskNames[i];
                 break;
@@ -96,6 +98,7 @@ class MYPOETest {
         assertNotNull(foundTask);
         assertEquals("Create Login", foundTask);
     }
+ 
      
     
 }
