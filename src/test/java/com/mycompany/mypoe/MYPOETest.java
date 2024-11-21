@@ -82,5 +82,20 @@ class MYPOETest {
         }
         assertTrue(result.toString().contains("Create Reports"));
     }
+    //Test the SearchTaskName() method
+    @Test
+    void checkCreateLoginSearch(){
+        String taskName = "Create Login";
+        String foundTask = null;
+        for (int i = 0; i < taskCount; i++) {
+            if (taskName.equalsIgnoreCase(taskNames[i])) {
+                foundTask = taskNames[i];
+                break;
+            }
+        }
+        assertNotNull(foundTask);
+        assertEquals("Create Login", foundTask);
+    }
+     
     
 }
