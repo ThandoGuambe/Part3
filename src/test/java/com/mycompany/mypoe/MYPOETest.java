@@ -62,6 +62,14 @@ class MYPOETest {
         durations[4] = 6;
         taskStatuses[4] = "To do";
     }
+    //Developer Array is correctly populated
+    @Test
+    void testDeveloperArray(){
+        for (int i = 0; i < taskCount; i++){
+            System.out.println(developer[i]);   
+        }
+    }
+    
     
     //Test the showLongestTask() method.
     @Test
