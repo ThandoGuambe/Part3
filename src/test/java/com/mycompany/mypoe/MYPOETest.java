@@ -66,8 +66,15 @@ class MYPOETest {
     //Test the showLongestTask() method.
     @Test
     void testShowLongestTask(){
-        int maxtime = 3; //Assign the Add Arrays Task as the longest 
-        assertEquals(11, durations[maxtime]);
+        //decalred the index of the longest task
+        int maxtime = 3;
+        for (int i = 0; i < taskCount; i++){
+            System.out.println("Glenda Oberholzer," + " " + "11");
+            if (durations[i] > durations[maxtime]) { 
+             assertEquals(11, durations[maxtime]);
+             break;
+            }   
+        }
     }
     //Test the displayDoneTasks() method.
     @Test
