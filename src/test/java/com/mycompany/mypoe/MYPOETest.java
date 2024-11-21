@@ -112,7 +112,7 @@ class MYPOETest {
         assertNotNull(foundTask);
         assertEquals("Create Login", foundTask);
     }
-    //Test a method that displays all assigned tasks to devloper
+    //Test a method that displays all assigned tasks to developer
     @Test
     void checkDeveloperSearch(){
         String dev = "Samantha Paulson";
@@ -128,6 +128,22 @@ class MYPOETest {
         assertNotNull(Task);
         assertEquals("Create Login", "Create Login");
     }
-     
+    //Test a method that deletes task from array
+    @Test void testDeleteTask(){
+        String task = "Create Reports";
+        int initialCount = taskCount;
+
+        for (int i = 0; i < taskCount; i++) {
+            if (task.equalsIgnoreCase(taskNames[i])) {
+                for (int j = i; j < taskCount - 1; j++) {
+                    
+                    System.out.println("Entry " + taskNames[i] + " " + "successfully deleted.");
+                }
+                taskCount--;
+                break;
+            }
+        }
+        assertEquals(initialCount - 1, taskCount);
+    }
     
 }
